@@ -1,7 +1,8 @@
-import { Link } from "expo-router";
 import { Text, View } from "react-native";
+import { Prompts } from "@/constants/prompts";
+import { Link } from "expo-router";
 
-export default function Index() {
+export default function Game() {
   return (
     <View
       style={{
@@ -10,9 +11,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Home</Text>
-      <Link href="/game">Start</Link>
-      <Link href="/info">Info</Link>
+      <Text>Game</Text>
     </View>
   );
 }
