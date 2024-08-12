@@ -29,12 +29,32 @@ You can start developing by editing the files inside the **app** directory. This
 
 ## Deploying
 
-1. Open `package.json`and edit the `"homepage": "http://{username}.github.io/{repo-name}"`to include correct information for you
+`gh-pages` is used to deploy the app to Github Pages. Refer to [Expo documentation](https://docs.expo.dev/distribution/publishing-websites/#github-pages) for more information.
 
-2. Deploy the app
+1. Open `app.json` and your repository name as a value to exporemental `baseUrl` property.
 
-   ```bash
-   npm run deploy
+   ```
+   {
+      "expo": {
+         "experiments": {
+            "baseUrl": "/repo-name-here"
+         }
+      }
+   }
    ```
 
-3. Setup Github Pages from the repository's settings
+2. Make a new directory `public` and add file `.nojekyll` in it.
+
+3. Open `package.json` and add `deploy` and `predeploy` scripts.
+
+   ```
+   "scripts": {
+      ... 
+      "deploy": "gh-pages -t -d dist",
+      "predeploy": "expo export -p web"
+   }
+   ```
+
+4. run `npm run deploy` to deploy the app.
+
+5. Configure Github Pages to serve the app from the `gh-pages` branch.
