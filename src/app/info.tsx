@@ -1,16 +1,9 @@
 import { Text, View } from "react-native";
-import { Prompts } from "@/constants/prompts";
-import { Link } from "expo-router";
+import { Styles } from "@/constants/Styles";
 
 export default function Info() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <View style={Styles.root}>
       <Text>Info</Text>
     </View>
   );
