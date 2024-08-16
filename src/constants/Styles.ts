@@ -33,7 +33,18 @@ export const Styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#000"
   },
-  gameNavButtonContainer: {
-    flexDirection: "row"
+  gameButton: {
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+  },
+  gameText : {
+    textAlign: "center",
+    margin: "auto",
+    fontSize: 24,
+    fontFamily: "sans-serif",
+    fontWeight: "bold",
+    color: "#000",
+    userSelect: "none"
   }
 });

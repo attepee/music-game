@@ -1,19 +1,22 @@
 import { Pressable, Text, View } from "react-native";
 import { useEffect, useState } from "react";
-import { Feather } from "@expo/vector-icons";
 import { Prompts } from "@/constants/Prompts";
 import { Styles } from "@/constants/Styles";
-
+import { STRINGS } from "@/constants/Strings"
 
 export default function Game() {
+  const [showGameStartPrompt, setShowGameStartPrompt] = useState(true);
+  const [showGameEndText, setShowGameEndText] = useState(false);
   const [prompts, setPrompts] = useState(Array<object>);
   const [index, setIndex] = useState(0);
+
+  console.log(index);
 
   useEffect(() => {
     if(prompts === undefined || prompts.length == 0) {
       shuffleArray(Prompts);
     }
-  });
+  })
 
   const shuffleArray = (array: Array<object>) => {
     for(let i = array.length - 1; i > 0; i--) {
@@ -24,26 +27,30 @@ export default function Game() {
     setPrompts(array);
   }
 
-  const decreaseIndex = () => {
-    index > 0 ? setIndex(index - 1) : setIndex(index);
-  }
-
   const increaseIndex = () => {
-    index < prompts.length - 1 ? setIndex(index + 1) : setIndex(index);
+    index < prompts.length - 1 ? setIndex(index + 1) : setShowGameEndText(true);
   }
 
   return (
     <View style={Styles.root}>
-      <Text>
-        {index + 1}/{prompts != undefined && prompts.length != 0 ? prompts.length : null}
-      </Text>
-      <Text>
-        {prompts != undefined && prompts.length != 0 ? Object.values(prompts[index])[1] : null}
-      </Text>
-      <View style={Styles.gameNavButtonContainer}>
-        <Feather name="arrow-left-circle" size={24} color="black" onPress={() => decreaseIndex()} />
-        <Feather name="arrow-right-circle" size={24} color="black" onPress={() => increaseIndex()} />
-      </View>
+      {
+        showGameStartPrompt &&
+        <Pressable  style={Styles.gameButton} onPress={() => setShowGameStartPrompt(false)}>
+          <Text style={Styles.gameText}>{STRINGS.START_GAME_PROMPT.fi}</Text>
+        </Pressable>
+      }
+      {
+        !showGameStartPrompt && !showGameEndText &&
+        <Pressable style={Styles.gameButton} onPress={() => increaseIndex()}>
+          <Text style={Styles.gameText}>{prompts != undefined && prompts.length != 0 ? Object.values(prompts[index])[0] : null}</Text>
+        </Pressable>
+      }
+      {
+        showGameEndText &&
+        <Pressable style={Styles.gameButton}>
+          <Text style={Styles.gameText}>{STRINGS.END_GAME_PROMPT.fi}</Text>
+        </Pressable>
+      }
     </View>
   );
 }
