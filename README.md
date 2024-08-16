@@ -2,6 +2,8 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+With this "game" you can get ideas for songs to play. Perfect when you want to get to know someone's taste in music or when hanging out with friends and you want something to do but playing some real game seems too much. The app gives prompts like "song you have sung in karaoke", "song you never get tired of" and "song that you used to love as a child" in randomized order and then you just play some song that fits the prompt. You can try it [here](https://attepee.github.io/music-game/) (only in finnish for now).
+
 ## Developing
 
 1. Navigate to `src`
