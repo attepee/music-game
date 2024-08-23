@@ -46,5 +46,31 @@ export const Styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#000",
     userSelect: "none"
+  },
+  languageContainer: {
+    flexDirection: "row",
+    width: "100%"
+  },
+  languageButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    marginVertical: 6,
+    borderRadius: 4,
+    alignItems: "center",
+    width: "50%",
+    backgroundColor: "#2bdbbe",
+    fontSize: 14,
+    fontFamily: "sans-serif",
+    fontWeight: "bold",
+    color: "#fff",
+    textAlign: "center"
+  },
+  languageButtonLeft: {
+    borderTopRightRadius: 0,
+    borderBottomRightRadius: 0
+  },
+  languageButtonRight: {
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0
   }
 });
