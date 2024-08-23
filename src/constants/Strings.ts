@@ -1,7 +1,7 @@
 export const STRINGS = {
     START_GAME_PROMPT : {
         fi: "Napauta aloittaaksesi",
-        en: "Tap to continue"
+        en: "Tap to start"
     },
     END_GAME_PROMPT : {
         fi: "Aiheet loppuivat...",
