@@ -138,5 +138,9 @@ export const Prompts = [
     {
         fi: "Biisi, jonka haluaisit nähdä esitettävän livenä",
         en: "A song you would like to see performed live"
+    },
+    {
+        fi: "Biisi, joka muistuttaa ensisuudelmastasi",
+        en: "A song that reminds you of you first kiss"
     }
 ];
