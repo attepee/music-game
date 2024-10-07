@@ -72,5 +72,20 @@ export const Styles = StyleSheet.create({
   languageButtonRight: {
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0
+  },
+  noticeText: {
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    marginVertical: 6,
+    borderRadius: 4,
+    fontSize: 24,
+    fontFamily: "sans-serif",
+    fontWeight: "bold",
+    backgroundColor: "#edb43b",
+    color: "#fff",
+    width: "100%"
+  },
+  link: {
+    color: "#3196e2"
   }
 });
